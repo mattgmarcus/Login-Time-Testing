@@ -44,11 +44,17 @@ app.get("/result3.html", function(req, res) {
 });
 
 
+//Send both register and / to the registration page
 app.get("/register.html", function(req, res) {
     var html = fs.readFileSync("register.html").toString();
     res.send(html);
 });
 
+app.get("/", function(req, res) {
+    var html = fs.readFileSync("register.html").toString();
+    res.send(html);
+
+});
 
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
